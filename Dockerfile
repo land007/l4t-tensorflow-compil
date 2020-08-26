@@ -27,4 +27,4 @@ RUN cd /opt/tensorflow && curl -L https://github.com/tensorflow/tensorflow/compa
 
 
 #docker build -t land007/l4t-tensorflow-compil:latest .
-#docker run -it --rm --runtime nvidia land007/l4t-tensorflow-compil:latest bash
+#docker run -it --runtime nvidia --name l4t-tensorflow-compil land007/l4t-tensorflow-compil:latest bash
