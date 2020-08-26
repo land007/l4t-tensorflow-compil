@@ -5,7 +5,7 @@ MAINTAINER Jia Yiqiu <yiqiujia@hotmail.com>
 #ADD bazel-0.26.1-dist.tar.gz /opt
 ADD tensorflow.tar.gz /opt
 
-RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y gcc-7 g++-7 build-essential openjdk-11-jdk python zip unzip wget
+RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y gcc-7 g++-7 build-essential openjdk-11-jdk python zip unzip wget curl
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-7
 #RUN update-alternatives --config gcc
 #RUN update-alternatives --config g++
@@ -20,6 +20,7 @@ RUN cd /opt && \
     tar -zxvf future-0.18.2.tar.gz && \
     cd future-0.18.2 && \
     python setup.py install
+RUN cd /opt/tensorflow && curl -L https://github.com/tensorflow/tensorflow/compare/master...hi-ogawa:grpc-backport-pr-18950.patch | git apply
 
 #cd /opt/tensorflow && ./configure
 #bazel build --config=opt --config=monolithic //tensorflow/tools/lib_package:libtensorflow
