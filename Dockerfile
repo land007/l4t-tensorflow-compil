@@ -22,6 +22,8 @@ RUN cd /opt && \
     python setup.py install
 RUN cd /opt/tensorflow && curl -L https://github.com/tensorflow/tensorflow/compare/master...hi-ogawa:grpc-backport-pr-18950.patch | git apply
 
+#ADD external /root/.cache/bazel/_bazel_root/fbc06f9baef46cade6e35d9e4137e37c/external
+
 #cd /opt/tensorflow && ./configure
 #bazel build --config=opt --config=monolithic //tensorflow/tools/lib_package:libtensorflow
 
