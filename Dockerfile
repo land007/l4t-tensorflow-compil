@@ -1,7 +1,7 @@
 FROM land007/l4t-cuda:latest
 #FROM land007/l4t-cuda:16.04
 #docker build -t land007/l4t-tensorflow-compil:16.04 .
-#docker run -it --runtime nvidia --name l4t-tensorflow-compil land007/l4t-tensorflow-compil:16.04 bash
+#docker run -it --runtime nvidia --name l4t-tensorflow-compil-16.04 land007/l4t-tensorflow-compil:16.04 bash
 
 MAINTAINER Jia Yiqiu <yiqiujia@hotmail.com>
 
